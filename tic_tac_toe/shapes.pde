@@ -21,6 +21,7 @@ public void humanTurn(int input){
         yPos = (row * 166) + 83;
         xPos = (column * 166) +83;
         circle(xPos, yPos, 160);
+        doneNumbers[i++] = count;
       }
       count++;
     }
