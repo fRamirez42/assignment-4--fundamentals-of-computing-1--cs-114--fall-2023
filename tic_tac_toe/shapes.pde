@@ -8,8 +8,10 @@ public void aiTurn(){
         xPos = column * 166;
         line(xPos, yPos, (xPos + 166), (yPos + 166)); 
         line((xPos + 166), yPos, xPos, (yPos + 166));
+        doneNumbers[i++] = count;
       }
       count++;
     }
   }
+  
 }
