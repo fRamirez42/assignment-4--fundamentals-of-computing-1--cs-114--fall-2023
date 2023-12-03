@@ -1,6 +1,5 @@
 public void aiTurn(){
   random = (int)(Math.random() * 8 + 0);
-  System.out.print(random);
   for(int row = 0; row < board.length; row++){
     for(int column = 0; column < board.length; column++){
       if(count == random){
@@ -13,5 +12,17 @@ public void aiTurn(){
       count++;
     }
   }
-  
+}
+
+public void humanTurn(int input){
+  for(int row = 0; row < board.length; row++){
+    for(int column = 0; column < board.length; column++){
+      if(input == count){
+        yPos = (row * 166) + 83;
+        xPos = (column * 166) +83;
+        circle(xPos, yPos, 160);
+      }
+      count++;
+    }
+  }
 }
