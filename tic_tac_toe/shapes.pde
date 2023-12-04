@@ -1,14 +1,18 @@
 public void aiTurn(){
+  while(full == true){
   random = (int)(Math.random() * 8);
+  full = checkBoard(input);
+  }
   
+  count = 0;
   for(int row = 0; row < board.length; row++){
     for(int column = 0; column < board.length; column++){
       if(count == random){
-        yPos = row * 166;
-        xPos = column * 166;
-        line(xPos, yPos, (xPos + 166), (yPos + 166)); 
-        line((xPos + 166), yPos, xPos, (yPos + 166));
-        doneNumbers[i++] = count;
+        yPos = row * (width/3);
+        xPos = column * (height/3);
+        line(xPos, yPos, (xPos + width/3), (yPos + height/3)); 
+        line((xPos + width/3), yPos, xPos, (yPos + width/3));
+        played[count] = 'x';
       }
       count++;
     }
@@ -16,13 +20,14 @@ public void aiTurn(){
 }
 
 public void humanTurn(int input){
+  count = 0;
   for(int row = 0; row < board.length; row++){
     for(int column = 0; column < board.length; column++){
       if(input == count){
-        yPos = (row * 166) + 83;
-        xPos = (column * 166) +83;
+        yPos = (row * width/3) + (width/3)/2;
+        xPos = (column * height/3) + (height/3)/2;
         circle(xPos, yPos, 160);
-        doneNumbers[i++] = count;
+        played[count] = 'o';
       }
       count++;
     }

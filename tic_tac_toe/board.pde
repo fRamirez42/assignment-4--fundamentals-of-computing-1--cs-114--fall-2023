@@ -1,14 +1,16 @@
 public void buildBoard(){
-  line(166, 0, 166, 500);
-  line(332, 0, 332, 500);
-  line(0, 166, 500, 166);
-  line(0, 332, 500, 332);
+  line(width/3, 0, width/3, height);
+  line((width/3)*2, 0, (width/3)*2, height);
+  line(0, height/3, width, height/3);
+  line(0, (height/3)*2, width, (height/3)*2);
 }
 
-public void checkBoard(int input){
-  for(int i = 0; i < doneNumbers.length; i++){
-    if(count == doneNumbers[i]){
-      
-    }
-  }
+public boolean checkBoard(int input){
+  char check = played[input];
+  
+  if(check == 'x' || check == 'o'){
+    return true;
+  } else {
+    return false;
+  }  
 }
