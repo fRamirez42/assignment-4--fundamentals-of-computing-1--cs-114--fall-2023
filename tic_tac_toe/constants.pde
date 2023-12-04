@@ -1,5 +1,6 @@
 import java.util.Scanner;
 Scanner scan = new Scanner(System.in);
+
 int random;
 int[][] board = new int[3][3];
 int count = 0;

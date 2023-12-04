@@ -6,7 +6,7 @@ public void buildBoard(){
 }
 
 public void checkBoard(int input){
-  for(int i = 0; i<9; i++){
+  for(int i = 0; i < doneNumbers.length; i++){
     if(count == doneNumbers[i]){
       
     }
