@@ -6,11 +6,24 @@ public void buildBoard(){
 }
 
 public boolean checkBoard(int input){
-  char check = played[input];
+  int check = played[input];
   
-  if(check == 'x' || check == 'o'){
+  if(check == -1 || check == -2){
     return true;
   } else {
     return false;
   }  
+  
+}
+
+public Integer randomizeNumber(){
+  while(full == true){
+    random = (int)(Math.random() * 8);
+    if(played[random] == -1 | played[random] == -2){
+      full = true;
+    }else{
+      full = false;
+    }  
+  }
+  return random;
 }

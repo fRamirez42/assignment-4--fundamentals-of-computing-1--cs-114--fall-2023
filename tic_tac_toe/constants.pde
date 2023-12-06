@@ -4,6 +4,6 @@ int count = 0;
 int xPos = 0;
 int yPos = 0;
 int input = 0;
-char[] played = new char[8];
+int[] played = new int[9];
 int i = 0;
 boolean full = true;
