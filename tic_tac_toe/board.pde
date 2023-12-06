@@ -5,22 +5,15 @@ public void buildBoard(){
   line(0, (height/3)*2, width, (height/3)*2);
 }
 
-public boolean checkBoard(int input){
-  int check = played[input];
-  
-  if(check == -1 || check == -2){
-    return true;
-  } else {
-    return false;
-  }  
-  
-}
 
-public Integer randomizeNumber(){
-  random = (int)(Math.random() * 8);
-  if(played[random] == -1 || played[random] == -2 ){
-      return randomizeNumber();
-  } else {
-    return random;
-  }
-}
+//public void checkWinner(){
+//  for(int row = 0; row < board.length; row++){
+//    if(played[count] == played[++count] && played[--count] && played[count=+2}){
+//      if(board[row][0] == 'h'){
+//        System.out.println("Human wins");
+//      } else if(board[row][0] == 'a'){
+//        System.out.println("AI wins");
+//      }
+//    }  
+//  }
+//}

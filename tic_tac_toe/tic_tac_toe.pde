@@ -1,5 +1,6 @@
 void setup() {
   size(500, 500);
+  over = false;
   buildBoard();
   aiTurn();
 }
@@ -56,5 +57,43 @@ void keyPressed(){
       
     default:
       System.out.println("Wrong key please press a number between 1-8");
+  }
+}
+
+public void aiTurn(){ 
+  random = randomizeNumber();
+  
+  count = 0;
+  for(int row = 0; row < board.length; row++){
+    for(int column = 0; column < board.length; column++){
+      if(count == random){
+        yPos = row * (width/3);
+        xPos = column * (height/3);
+        playXAt(xPos, yPos);
+        played[count] = 'a';
+      }
+      count++;
+    }
+  }
+}
+
+public void humanTurn(int input){
+  if(played[input] == -1 || played[input] == -2){
+    System.out.println("You entered a value already in the board, try again");
+  } else {
+    count = 0;
+    for(int row = 0; row < board.length; row++){
+      for(int column = 0; column < board.length; column++){
+        if(input == count){
+          yPos = (row * width/3) + (width/3)/2;
+          xPos = (column * height/3) + (height/3)/2;
+          playOAt(xPos, yPos);
+          played[count] = 'h';
+        }
+        count++;
+      }
+    }
+    //checkWinner();
+    aiTurn();
   }
 }
