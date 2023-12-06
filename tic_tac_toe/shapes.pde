@@ -17,16 +17,21 @@ public void aiTurn(){
 }
 
 public void humanTurn(int input){
-  count = 0;
-  for(int row = 0; row < board.length; row++){
-    for(int column = 0; column < board.length; column++){
-      if(input == count){
-        yPos = (row * width/3) + (width/3)/2;
-        xPos = (column * height/3) + (height/3)/2;
-        circle(xPos, yPos, 160);
-        played[count] = -2;
+  if(played[input] == -1 || played[input] == -2){
+    System.out.println("You entered a value already in the board, try again");
+  } else {
+    count = 0;
+    for(int row = 0; row < board.length; row++){
+      for(int column = 0; column < board.length; column++){
+        if(input == count){
+          yPos = (row * width/3) + (width/3)/2;
+          xPos = (column * height/3) + (height/3)/2;
+          circle(xPos, yPos, 160);
+          played[count] = -2;
+        }
+        count++;
       }
-      count++;
     }
+    aiTurn();
   }
 }
