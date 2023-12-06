@@ -17,13 +17,10 @@ public boolean checkBoard(int input){
 }
 
 public Integer randomizeNumber(){
-  while(full == true){
-    random = (int)(Math.random() * 8);
-    if(played[random] == -1 | played[random] == -2){
-      full = true;
-    }else{
-      full = false;
-    }  
+  random = (int)(Math.random() * 8);
+  if(played[random] == -1 || played[random] == -2 ){
+      return randomizeNumber();
+  } else {
+    return random;
   }
-  return random;
 }
