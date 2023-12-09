@@ -7,13 +7,9 @@ public void buildBoard(){
 
 
 public char checkWinner(int aiMove) {
-  int[][] winCombinations = {
-    {0, 1, 2}, {3, 4, 5}, {6, 7, 8},
-    {0, 3, 6}, {1, 4, 7}, {2, 5, 8},
-    {0, 4, 8}, {2, 4, 6}
-  };
-
-  for (int[] combo : winCombinations) {
+  
+  for(int i = 0; i < winCombinations.length; i++){
+    combo = winCombinations[i];
     char cell = board[combo[0]];
     if (cell != ' ' && cell == board[combo[1]] && cell == board[combo[2]]) {
       return cell;

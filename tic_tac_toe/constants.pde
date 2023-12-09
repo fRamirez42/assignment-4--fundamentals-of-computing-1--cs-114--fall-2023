@@ -10,3 +10,9 @@ boolean over = false;
 private static final char AI = 'a';
 private static final char HUMAN = 'h';
 char winner;
+int[] combo;
+int[][] winCombinations = {
+    {0, 1, 2}, {3, 4, 5}, {6, 7, 8},
+    {0, 3, 6}, {1, 4, 7}, {2, 5, 8},
+    {0, 4, 8}, {2, 4, 6}
+  };
