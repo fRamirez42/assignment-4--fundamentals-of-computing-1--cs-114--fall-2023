@@ -5,7 +5,7 @@ void setup() {
   aiTurn();
 }
 
-void draw() {
+void draw(){
 }
 
 void keyPressed(){
@@ -62,7 +62,7 @@ void keyPressed(){
 
 public void aiTurn(){ 
   random = randomizeNumber();
-   playXAt(random);
+  playXAt(random);
   //count = 0;
   //for(int row = 0; row < board.length; row++){
   //  for(int column = 0; column < board.length; column++){
@@ -89,6 +89,9 @@ public void humanTurn(int input){
           xPos = (column * height/3) + (height/3)/2;
           playOAt(xPos, yPos);
           played[count] = 'h';
+          
+          break;
+          
         }
         count++;
       }
