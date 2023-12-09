@@ -3,12 +3,12 @@ public void drawO(int xPos, int yPos){
 }
 
 public Integer randomizeNumber(){
-  random = (int)(Math.random() * 8);
-  if(played[random] == 'h' || played[random] == 'a' ){
-      return randomizeNumber();
-  } else {
+  int random;
+  do {
+    random = (int) (Math.random() * 8);
+  } while (board[random] == 'h' || board[random] == 'a');
+    
     return random;
-  }
 }
 
 public void drawX(int xPos, int yPos){
