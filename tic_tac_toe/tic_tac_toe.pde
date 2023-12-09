@@ -63,39 +63,15 @@ void keyPressed(){
 public void aiTurn(){ 
   random = randomizeNumber();
   playXAt(random);
-  //count = 0;
-  //for(int row = 0; row < board.length; row++){
-  //  for(int column = 0; column < board.length; column++){
-  //    if(count == random){
-  //      yPos = row * (width/3);
-  //      xPos = column * (height/3);
-  //      playXAt(xPos, yPos);
-  //      played[count] = 'a';
-  //    }
-  //    count++;
-  //  }
-  //}
+  played[random] = 'a';
 }
 
 public void humanTurn(int input){
-  if(played[input] == -1 || played[input] == -2){
+  if(played[input] == 'h' || played[input] == 'a'){
     System.out.println("You entered a value already in the board, try again");
   } else {
-    count = 0;
-    for(int row = 0; row < board.length; row++){
-      for(int column = 0; column < board.length; column++){
-        if(input == count){
-          yPos = (row * width/3) + (width/3)/2;
-          xPos = (column * height/3) + (height/3)/2;
-          playOAt(xPos, yPos);
-          played[count] = 'h';
-          
-          break;
-          
-        }
-        count++;
-      }
-    }
+    playOAt(input);
+    played[input] = 'h';
     //checkWinner();
     aiTurn();
   }
