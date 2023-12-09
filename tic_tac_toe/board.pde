@@ -7,7 +7,6 @@ public void buildBoard(){
 
 
 public char checkWinner(int aiMove) {
-  
   for(int i = 0; i < winCombinations.length; i++){
     combo = winCombinations[i];
     char cell = board[combo[0]];
