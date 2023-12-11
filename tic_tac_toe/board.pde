@@ -15,7 +15,9 @@ public char checkWinner(int aiMove) {
     combo = winCombinations[i];
     char cell = board[combo[0]];
     if (cell != ' ' && cell == board[combo[1]] && cell == board[combo[2]]) {
+      
       return cell;
+      
     }
   }
   
