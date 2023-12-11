@@ -7,9 +7,7 @@ public void buildBoard(){
 
 
 public char checkWinner(int aiMove) {
-  if(checkIfTie() == true){
-    return 'T';
-  }
+  
   
   for(int i = 0; i < winCombinations.length; i++){
     combo = winCombinations[i];
@@ -18,6 +16,11 @@ public char checkWinner(int aiMove) {
       
       return cell;
       
+    }
+    if(checkIfTie() == true){
+      
+    return 'T';
+    
     }
   }
   

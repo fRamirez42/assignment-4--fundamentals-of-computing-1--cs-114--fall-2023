@@ -87,7 +87,7 @@ void keyPressed(){
         break;
       
       default:
-        System.out.println("Wrong key please press a number between 1-8");
+        System.out.println("Wrong key please press a number between 0-8");
     }
   } else {
     System.out.println("Game is over");
