@@ -8,6 +8,36 @@ void setup() {
 void draw(){
 }
 
+public void aiTurn(){ 
+  random = randomizeNumber();
+  playXAt(random);
+  board[random] = 'a';
+  
+  winner = checkWinner(random);
+  if (winner != ' ') {
+    if(winner == 'h'){
+      over = true;
+      System.out.println("Player wins!");
+    } else if(winner == 'a') {
+      over = true;
+      System.out.println("Computer wins!");
+    } else if(winner == 'T'){
+      System.out.println("Game ended in a tie, please restart!");
+      over = true;
+    }
+  } 
+}
+
+public void humanTurn(int input){
+  if(board[input] == 'h' || board[input] == 'a'){
+    System.out.println("You entered a value already in the board, try again");
+  } else {
+    playOAt(input);
+    board[input] = 'h';
+    aiTurn();
+  }
+}
+
 void keyPressed(){
   if(over == false){
     switch(key){
@@ -61,35 +91,5 @@ void keyPressed(){
     }
   } else {
     System.out.println("Game is over");
-  }
-}
-
-public void aiTurn(){ 
-  random = randomizeNumber();
-  playXAt(random);
-  board[random] = 'a';
-  
-  winner = checkWinner(random);
-  if (winner != ' ') {
-    if(winner == 'h'){
-      over = true;
-      System.out.println("Player wins!");
-    } else if(winner == 'a') {
-      over = true;
-      System.out.println("Computer wins!");
-    } else if(winner == 'T'){
-      System.out.println("Game ended in a tie, please restart!");
-      over = true;
-    }
-  } 
-}
-
-public void humanTurn(int input){
-  if(board[input] == 'h' || board[input] == 'a'){
-    System.out.println("You entered a value already in the board, try again");
-  } else {
-    playOAt(input);
-    board[input] = 'h';
-    aiTurn();
   }
 }
