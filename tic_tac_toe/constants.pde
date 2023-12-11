@@ -1,5 +1,4 @@
 int random = 0;
-int count = 0;
 int xPos = 0;
 int yPos = 0;
 int input = 0;

@@ -69,8 +69,6 @@ public void aiTurn(){
   playXAt(random);
   board[random] = 'a';
   
-  
-  
   winner = checkWinner(random);
   if (winner != ' ') {
     if(winner == 'h'){
@@ -79,11 +77,11 @@ public void aiTurn(){
     } else if(winner == 'a') {
       over = true;
       System.out.println("Computer wins!");
-    } 
-  } else if(checkIfTie() == true){
-    over = true;
-    System.out.println("Game ended in a tie, please restart");
-  }
+    } else if(winner == 'T'){
+      System.out.println("Game ended in a tie, please restart!");
+      over = true;
+    }
+  } 
 }
 
 public void humanTurn(int input){
