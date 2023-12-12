@@ -20,9 +20,8 @@ public char checkWinner(int aiMove) {
       
     return 'T';
     
-    }
-  
-  //return (board[aiMove] == ' ' && aiMove >= 0 && aiMove < board.length) ? AI : ' ';  
+  }
+
   return ' ';
   
 }
