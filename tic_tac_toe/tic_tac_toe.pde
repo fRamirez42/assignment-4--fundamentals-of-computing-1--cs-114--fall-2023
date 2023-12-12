@@ -11,7 +11,7 @@ void draw(){
 public void aiTurn(){ 
   random = randomizeNumber();
   playXAt(random);
-  board[random] = 'a';
+  board[random] = 'a'; //Assigns a to position in array (a for AI)
   
   winner = checkWinner(random);
   if (winner != ' ') {
@@ -33,7 +33,7 @@ public void humanTurn(int input){
     System.out.println("You entered a value already in the board, try again");
   } else {
     playOAt(input);
-    board[input] = 'h';
+    board[input] = 'h'; //Assigns h to position in array (h for Human)
     aiTurn();
   }
 }

@@ -7,34 +7,33 @@ public void buildBoard(){
 
 
 public char checkWinner(int aiMove) {
-  
-  
   for(int i = 0; i < winCombinations.length; i++){
     combo = winCombinations[i];
-    char cell = board[combo[0]];
+    cell = board[combo[0]]; 
     if (cell != ' ' && cell == board[combo[1]] && cell == board[combo[2]]) {
       
-      return cell;
+      return cell; //Returns char of winning entity
       
     }
-    if(checkIfTie() == true){
+  }
+  if(checkIfTie() == true){
       
     return 'T';
     
     }
-  }
   
-  return (board[aiMove] == ' ' && aiMove >= 0 && aiMove < board.length) ? AI : ' ';   
+  //return (board[aiMove] == ' ' && aiMove >= 0 && aiMove < board.length) ? AI : ' ';  
+  return ' ';
   
 }
 
 public boolean checkIfTie() {
     for (int i = 0; i < board.length; i++) {
         if (board[i] == 0) {
-            return false; 
+            return false;
         }   
     }
-    return true;
+    return true; 
 }
 
   
